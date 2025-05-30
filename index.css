@@ -1106,13 +1106,17 @@ body{
     }
 
     #header .wrap_hd .gnb{
+        width: 520px;
         margin-left: 20px;
     }
     #header .wrap_hd .gnb:hover{
         width: 700px;
     }
-    #header .wrap_hd .gnb:hover > li+li::before{
+    #header .wrap_hd .gnb > li+li::before{
         left: -20px;
+    }
+    #header .wrap_hd .gnb:hover > li+li::before{
+        left: -40px;
     }
 
     #header .side_menu{
@@ -1206,14 +1210,17 @@ body{
     #header .wrap_hd .gnb{
         left: 28%;
         height: 110px;
-        width: 480px;
+        width: 400px;
         transition: width 0.4s;
     }
+    #header .wrap_hd .gnb > li+li::before{
+        left: -18px;
+    }
     #header .wrap_hd .gnb:hover{
-        width: 480px;
+        width: 400px;
     }
     #header .wrap_hd .gnb:hover > li+li::before{
-        left: -15px;
+        left: -18px;
     }
     #header .wrap_hd .gnb>li>a{
         font-size: 14px;
@@ -1468,14 +1475,19 @@ body{
         top: 30px;
         left: 2%;
         height: 110px;
-        width: 460px;
+        width: 300px;
         transition: width 0.4s;
     }
     #header .wrap_hd .gnb:hover{
-        width: 460px;
+        width: 300px;
+    }
+    #header .wrap_hd .gnb > li+li::before{
+        height: 10px;
+        top: 6px; left: -5px;
+        transform: rotate(20deg);
     }
     #header .wrap_hd .gnb:hover > li+li::before{
-        left: -15px;
+        left: -5px;
     }
     #header .wrap_hd .gnb>li>a{
         font-size: 14px;
