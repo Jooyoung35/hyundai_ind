@@ -1774,8 +1774,14 @@ body{
     margin-top: 30px;
 }
 #footer .foot_info .foot_menu>li{
+    width: 150px;
     margin-top: 10px;
 }
+#footer .foot_info .foot_ect .sub_mn .site_con ul{
+    width: 130px;
+}
+
+
 /* 주소 및 서브 메뉴 */
 #footer .foot_info .foot_ect{
     display: block;
