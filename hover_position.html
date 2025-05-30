@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .hover-btn {
+  position: relative;
+  padding: 20px 40px;
+  font-size: 18px;
+  background: linear-gradient(120deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.hover-btn::after {
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.4s ease, height 0.4s ease;
+  pointer-events: none;
+}
+
+.hover-btn:hover::after {
+  width: 200px;
+  height: 200px;
+}
+
+   </style>
+</head>
+<body>
+   <button class="hover-btn">Hover me</button>
+   <button class="hover-btn">Hover me</button>
+   <script>
+      const btn = document.querySelector('.hover-btn');
+
+btn.addEventListener('mousemove', (e) => {
+  const rect = btn.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  btn.style.setProperty('--x', `${x}px`);
+  btn.style.setProperty('--y', `${y}px`);
+});
+
+   </script>
+</body>
+</html>
