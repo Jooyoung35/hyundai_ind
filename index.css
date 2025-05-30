@@ -1830,12 +1830,8 @@ body{
     height: 150px;
     margin-top: 30px;
 }
-#footer .foot_info .foot_menu>li{
-    width: 150px;
+#footer .foot_info .foot_menu>li {
     margin-top: 10px;
-}
-#footer .foot_info .foot_ect .sub_mn .site_con ul{
-    width: 150px;
 }
 
 
