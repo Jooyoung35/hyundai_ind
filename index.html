@@ -23,7 +23,6 @@
 
         //gnb 마우스 호버하면 흰색 배경 내려오게하기
         $(".gnb").mouseenter(function(){
-
             $(".wrap_gnb").stop().animate({"height":"480px"},500);
         });
 
@@ -60,7 +59,35 @@
             $(".side_menu").removeClass("active");
         });
 
+        
+        
+        //모바일용 gnb 나타내기!!
+        $(".gnb_btn").click(function () {
+            $(".wrap_mo_gnb").stop().slideToggle(300); // 메뉴 열고 닫기
 
+            $(".open").toggle(); // 아이콘 바꾸기
+            $(".close").toggle(); // 아이콘 바꾸기
+        });
+
+
+    
+        // 모바일용 gnb 아코디언메뉴!!!
+        $(".mobile_gnb>li>a").click(function(e){
+            e.preventDefault();  //a태그로 인하여 생긴 어딘가로 이동하려는 속성을 해제?
+
+            if($(this).hasClass("active")){ //내가 클릭한 a에 클래스 active있는지 찾아서
+                $(".mobile_gnb>li>a").siblings("ul").stop().slideUp(500); //lnb>li>a 의 형제요소 ul을 전부 슬라이드 업
+                $(".mobile_gnb>li>a").removeClass("active"); //lnb>li>a에 클래스명 active를 다 지워
+                $(this).removeClass("active"); //클릭한 a도  active을 지워주고
+                $(this).siblings("ul").stop().slideUp(500); //형제요소인 ul을 찾아서 슬라이드 업
+
+            }else{ 
+                $(".mobile_gnb>li>a").siblings("ul").stop().slideUp(500);
+                $(".mobile_gnb>li>a").removeClass("active");
+                $(this).addClass("active"); //없으면 active을 추가해줘
+                $(this).siblings("ul").stop().slideDown(500);  //a랑 형제(같은레벨)인 ul을찾아서 슬라이드 다운
+            }      
+        });
 
 
 
@@ -145,7 +172,6 @@
     <div id="header">
         <div class="wrap_hd">
             <h1 class="logo"><a href="#"></a></h1>
-            <!-- <div class="gnb_ham"></div> -->
             <ul class="gnb">
                 <li>
                     <a href="#">기업소개</a>
@@ -210,6 +236,70 @@
                     <ul class="lang_sub">
                         <li><a href="#">KR</a></li>
                         <li><a href="#">ENG</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="gnb_btn">
+            <span class="material-symbols-outlined open">menu</span>
+            <span class="material-symbols-outlined close">close</span>
+        </div>
+        <div class="wrap_mo_gnb">
+            <ul class="mobile_gnb">
+                <li>
+                    <a href="#">기업소개</a>
+                    <ul class="sub">
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">기업현황</a></li>
+                        <li><a href="#">역사</a></li>
+                        <li><a href="#">가치체계</a></li>
+                        <li><a href="#">사훈·사가</a></li>
+                        <li><a href="#">창업자 어록</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">사업분야</a>
+                    <ul class="sub">
+                        <li><a href="#">조선</a></li>
+                        <li><a href="#">해양에너지</a></li>
+                        <li><a href="#">특수선</a></li>
+                        <li><a href="#">엔진기계</a></li>
+                        <li><a href="#">연구개발</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">홍보</a>
+                    <ul class="sub">
+                        <li><a href="#">보도자료</a></li>
+                        <li><a href="#">사보</a></li>
+                        <li><a href="#">브로슈어</a></li>
+                        <li><a href="#">홍보영화</a></li>
+                        <li><a href="#">그룹50년사</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">지속가능경영</a>
+                    <ul class="sub">
+                        <li><a href="#">ESG경영</a></li>
+                        <li><a href="#">안전·보건·환경</a></li>
+                        <li><a href="#">윤리경영</a></li>
+                        <li><a href="#">준법경영</a></li>
+                        <li><a href="#">품질경영</a></li>
+                        <li><a href="#">사회공헌</a></li>
+                        <li><a href="#">보고서·정책</a></li>
+                        <li><a href="#">녹색채권</a></li>
+                        <li><a href="#">지속가능한 공급망</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">투자자정보</a>
+                    <ul class="sub">
+                        <li><a href="#">공시/공고</a></li>
+                        <li><a href="#">지배구조</a></li>
+                        <li><a href="#">재무정보</a></li>
+                        <li><a href="#">주가정보</a></li>
+                        <li><a href="#">IR 자료실</a></li>
+                        <li><a href="#">IR 문의</a></li>
                     </ul>
                 </li>
             </ul>

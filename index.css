@@ -113,6 +113,7 @@ body{
     transform: translateX(-50%);
 }
 #header .wrap_hd .gnb > li .sub li{
+    font-size: 15px;
     margin-top: 13px;
 }
 #header .wrap_hd .gnb > li .sub li a{
@@ -209,6 +210,63 @@ body{
 /*  header >>>>> 좌측 side_menu 영역--------------------------▲▲▲▲▲▲▲▲ */
 
 
+
+/*  모바일용으로 만든 gnb 영역------------------------------------------ */
+
+/* 버튼!!!!! */
+#header .gnb_btn{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 42px; right: 30px;
+    z-index: 5;
+    cursor: pointer;
+    /* border: 1px solid red; */
+    display: none;
+}
+#header .gnb_btn span{
+    width: 20px;
+    display: block;
+    position: absolute;
+    top: 0px; right: 0px;
+    color: white;
+}
+#header .gnb_btn span.close {
+    display: none;
+    color: gray;
+}
+
+
+/*gnb모바일용---------------------------*/
+
+.wrap_mo_gnb {
+    display: none;
+}
+#header .wrap_mo_gnb{
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.932);
+    position: absolute;
+    top: 40px; right: 0px;
+    padding: 50px 30px;
+}
+#header .wrap_mo_gnb .mobile_gnb>li+li{
+    margin-top: 20px;
+}
+#header .wrap_mo_gnb .mobile_gnb>li>a{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(0, 61, 153);
+}
+#header .wrap_mo_gnb .mobile_gnb>li> .sub{
+    margin-top: 10px;
+    display: none;
+}
+#header .wrap_mo_gnb .mobile_gnb>li> .sub a{
+    font-size: 14px;
+    margin-left: 10px;
+    line-height: 1.8;
+    /* border: 1px solid red; */
+}
 
 
 
@@ -1118,6 +1176,9 @@ body{
     #header .wrap_hd .gnb:hover > li+li::before{
         left: -40px;
     }
+    #header .wrap_hd .gnb > li .sub li a{
+        font-size: 14px;
+    }
 
     #header .side_menu{
         display: none;
@@ -1227,6 +1288,9 @@ body{
     }
     #header .wrap_hd .gnb > li .sub{
         width: 100px;
+    }
+    #header .wrap_hd .gnb > li .sub li a{
+        font-size: 13px;
     }
     #header .wrap_hd .gnb:hover > li .sub li a{
         font-size: 13px;
@@ -1472,41 +1536,18 @@ body{
     }
     
     #header .wrap_hd .gnb{
-        top: 30px;
-        left: 2%;
-        height: 110px;
-        width: 300px;
-        transition: width 0.4s;
+        display: none;
     }
-    #header .wrap_hd .gnb:hover{
-        width: 300px;
-    }
-    #header .wrap_hd .gnb > li+li::before{
-        height: 10px;
-        top: 6px; left: -5px;
-        transform: rotate(20deg);
-    }
-    #header .wrap_hd .gnb:hover > li+li::before{
-        left: -5px;
-    }
-    #header .wrap_hd .gnb>li>a{
-        font-size: 14px;
-    }
-    #header .wrap_hd .gnb > li .sub li a{
-    font-size: 13px;
-}
-    #header .wrap_hd .gnb > li .sub{
-        width: 100px;
-    }
-    #header .wrap_hd .gnb:hover > li .sub li a{
-        font-size: 13px;
-    }
-
 
 
     #header .wrap_hd .side_menu{
         display: none;
     }
+
+    /* 모바일용 gnb */
+    #header .gnb_btn{
+    display: block;
+}
 
 
 
@@ -1516,12 +1557,27 @@ body{
     }
 
     /* 메인배너----------------- */
+    #section .wrap_main_banner .main_bn>li{
+        background-position: center;
+    }
+    #section .wrap_main_banner .main_bn>li.bg1{
+        background-image: url(images/main_01_mo.png);
+    }
+    #section .wrap_main_banner .main_bn>li.bg2{
+        background-image: url(images/main_02_mo.png);
+    }
+    #section .wrap_main_banner .main_bn>li.bg3{
+        background-image: url(images/main_03_mo.png);
+    }
+    #section .wrap_main_banner .main_bn>li.bg4{
+        background-image: url(images/main_04_mo.png);
+    }
     #section .wrap_main_banner .main_bn li .mb_text{  /*메인 텍스트 영역*/
-        left: 30px;
+        left: 20px;
         bottom: 150px;
     }
     #section .wrap_main_banner .main_bn li .mb_text .ss_txt{
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
 
@@ -1598,11 +1654,12 @@ body{
         padding: 0 20px;
     }
     #section .sustain .sus_area .sus_text h3{
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: 500;
     }
     #section .sustain .sus_area .sus_text p{
         font-size: 14px;
+        /* display: none; */
     }
 
 
