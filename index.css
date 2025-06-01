@@ -1275,16 +1275,16 @@ body{
         transition: width 0.4s;
     }
     #header .wrap_hd .gnb > li+li::before{
-        left: -18px;
+        left: -10px;
     }
     #header .wrap_hd .gnb:hover{
         width: 400px;
     }
     #header .wrap_hd .gnb:hover > li+li::before{
-        left: -18px;
+        left: -10px;
     }
     #header .wrap_hd .gnb>li>a{
-        font-size: 14px;
+        font-size: 16px;
     }
     #header .wrap_hd .gnb > li .sub{
         width: 100px;
